@@ -6,9 +6,6 @@ package com.kyo.configs;
 
 import java.util.Properties;
 import javax.sql.DataSource;
-import org.hibernate.cfg.AvailableSettings;
-import static org.hibernate.cfg.AvailableSettings.DIALECT;
-import static org.hibernate.cfg.AvailableSettings.SHOW_SQL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -50,8 +47,8 @@ public class HibernateConfig {
 
     public Properties hibernateProperties() {
         Properties props = new Properties();
-        props.put(AvailableSettings.DIALECT, this.env.getProperty("hibernate.dialect"));
-        props.put(AvailableSettings.SHOW_SQL, this.env.getProperty("hibernate.showSql"));
+        props.setProperty(org.hibernate.cfg.Environment.DIALECT, env.getProperty("hibernate.dialect"));
+        props.setProperty(org.hibernate.cfg.Environment.SHOW_SQL, env.getProperty("hibernate.showSql"));
         
         return props;
     }
@@ -60,7 +57,7 @@ public class HibernateConfig {
     public HibernateTransactionManager transactionManager() {
         HibernateTransactionManager h = new HibernateTransactionManager();
         
-        h.setSessionFactory(this.getSessionFactory().getObject());
+        h.setSessionFactory(getSessionFactory().getObject());
         
         return h;
     }

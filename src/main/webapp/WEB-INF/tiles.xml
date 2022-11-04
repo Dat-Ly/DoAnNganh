@@ -6,7 +6,7 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
 
 <tiles-definitions>
     <definition name="baseLayout" template = "/WEB-INF/layout/base.jsp">
-<!--        <put-attribute name="title" value="..."/>-->
+        <!--        <put-attribute name="title" value="..."/>-->
             
         <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
         
@@ -16,23 +16,43 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
     </definition>
     
     <definition name="index" extends="baseLayout">
-        <put-attribute name="title" value="Trang chủ"/>
+        <put-attribute name="title" value="Danh sach phong"/>
         <put-attribute name="content" value="/WEB-INF/jsp/index.jsp"/>
     </definition>
-    <definition name="login" extends="baseLayout">
-        <put-attribute name="title" value="Đăng nhập"/>
-        <put-attribute name="content" value="/WEB-INF/jsp/login.jsp"/>
+    <definition name="addroom" extends="baseLayout">
+        <put-attribute name="title" value="Them Phong"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/addroom.jsp"/>
     </definition>
-    <definition name="register" extends="baseLayout">
-        <put-attribute name="title" value="Đăng ký"/>
-        <put-attribute name="content" value="/WEB-INF/jsp/register.jsp"/>
+     <definition name="customer" extends="baseLayout">
+        <put-attribute name="title" value="Danh sach nguoi thue"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/customer.jsp"/>
     </definition>
-    <definition name="book" extends="baseLayout">
-        <put-attribute name="title" value="Đặt lịch"/>
-        <put-attribute name="content" value="/WEB-INF/jsp/book.jsp"/>
+    <definition name="addcustomer" extends="baseLayout">
+        <put-attribute name="title" value="Thue phong"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/addcustomer.jsp"/>
     </definition>
-    <definition name="admin" extends="baseLayout">
-        <put-attribute name="title" value="Admin"/>
-        <put-attribute name="content" value="/WEB-INF/jsp/admin.jsp"/>
+    <definition name="bill" extends="baseLayout">
+        <put-attribute name="title" value="Thanh toan"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/bill.jsp"/>
     </definition>
+    <definition name="updateroom" extends="baseLayout">
+        <put-attribute name="title" value="Cap Nhat"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/updateroom.jsp"/>
+    </definition>
+    <definition name="updatecus" extends="baseLayout">
+        <put-attribute name="title" value="Cap Nhat"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/updatecus.jsp"/>
+    </definition>
+    <definition name="listbill" extends="baseLayout">
+        <put-attribute name="title" value="Danh Sach Hoa Don"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/listbill.jsp"/>
+    </definition>
+    <definition name="thongke" extends="baseLayout">
+        <put-attribute name="title" value="Thong Ke Doanh Thu"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/thongke.jsp"/>
+    </definition>  
+    <definition name="room" extends="baseLayout">
+        <put-attribute name="title" value="Quản lí phòng"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/room.jsp"/>
+    </definition>  
 </tiles-definitions>

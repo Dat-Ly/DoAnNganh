@@ -1,47 +1,55 @@
 <%-- 
     Document   : index
     Created on : Aug 9, 2022, 11:39:42 AM
-    Author     : Kyoya
+    Author     : datly
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home Page</title>
-    </head>
-    <body>
-        <div class="container p-4 my-4 bg-primary text-white">
-            <h1>Xin trân trọng kính chào quý khách</h1>
-            <p>Phòng mạch đại học Mở</p>
+
+<h1 class="text-center">DANH SÁCH PHÒNG</h1>
+<form action="">
+    <div class="row">
+        <div class="col-md-11">
+            <input class="form-control" type="text" name="kw" placeholder="Nhập phòng cần tìm"/>
         </div>
-        <!-- Carousel -->
-        <div id="demo" class="carousel slide" data-bs-ride="carousel">
-            <!-- Indicators/dots -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <div class="col-md-1">
+            <input type="submit" value="Tìm kiếm"  class="btn btn-primary"/>
+        </div>
+
+    </div>
+
+</form>
+
+<div>
+    
+    <ul class="pagination">
+        <c:forEach begin="1" end="${Math.ceil(counter/8)}" var="i">
+            <li class="page-item"><a class="page-link" href="<c:url value="/"/>?page=${i}">${i}</a></li>
+        </c:forEach>
+        
+    </ul>
+</div>
+    
+    <div class="row"> 
+
+        <c:forEach var="r" items="${rooms}">
+            <div class="card col-md-3">
+                <div class="card-body">
+                    <img class="img-fluid" src="${r.avatar}">
+                </div>
+                <div class="card-footer">
+                    <h3>${r.roomName}</h3>
+                    <h5>Trạng thái: ${r.trangthai}</h5>
+                    <h5>Số lượng: ${r.soluong}</h5>
+                    <p>${r.cost} VND</p>
+                </div>
+                    <div>
+                        <div>
+                            <a href="<c:url value="/addcustomer/${r.idRoom}"/>" class="btn btn-warning">Cho thuê</a>
+                        </div>
+                    </div>
             </div>
 
-            <!-- The slideshow/carousel -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="<c:url value="/images/01.jpg"/>" alt="img_dhm01" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="<c:url value="/images/02.jpg"/>" alt="img_dhm02" class="d-block w-100">
-                </div>
-            </div>
-
-            <!-- Left and right controls/icons -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-        </div>
-    </body>
-</html>
+        </c:forEach>
+    </div>  

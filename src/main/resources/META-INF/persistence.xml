@@ -7,6 +7,10 @@
     <class>com.kyo.pojos.Users</class>
     <class>com.kyo.pojos.Chitiettoathuoc</class>
     <class>com.kyo.pojos.LichKham</class>
+    <class>com.kyo.pojos.Customer</class>
+    <class>com.kyo.pojos.Bill</class>
+    <class>com.kyo.pojos.Room</class>
+    <class>com.kyo.pojos.Billdetail</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/qlpm?zeroDateTimeBehavior=CONVERT_TO_NULL"/>

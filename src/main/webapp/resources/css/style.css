@@ -1,8 +1,11 @@
 body {
     background-color: mediumspringgreen;
 }
+div.container {
+    display: contents;
+}
 div.container > form{
-    border: solid;
+    
     margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
